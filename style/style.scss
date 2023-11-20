@@ -1,0 +1,214 @@
+$color-accent: #fa6980;
+$color-title: #202124;
+$color-text: #888888;
+$color-bg-gray: #f6f6f6;
+$color-sub: #bbbbbb;
+
+@mixin inner($w: 90%, $mw: 800px) {
+  width: $w;
+  max-width: $mw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin flex($a: center, $j: space-between) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $j;
+  align-items: $a;
+}
+
+@mixin py($y: 60px) {
+  padding-top: $y;
+  padding-bottom: $y;
+}
+
+@mixin title-main() {
+  margin-bottom: 30px;
+  border-left: 10px solid $color-accent;
+  padding-left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: (31/24);
+  text-transform: uppercase;
+  color: #202124;
+}
+
+@mixin title-sub() {
+  margin-bottom: 15px;
+  color: $color-title;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: (23/18);
+}
+
+/*ここから*/
+
+body {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $color-text;
+  line-height: (24/14);
+  letter-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+/*header
+------------------------------------*/
+
+.header {
+  padding-top: 30px;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__logo {
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+/*news
+------------------------------------*/
+
+.news {
+  @include py();
+
+  &__inner {
+    @include inner();
+  }
+
+  &__title {
+    @include title-main();
+  }
+
+  &__list {
+    @include flex();
+    margin-bottom: -60px;
+  }
+
+  &__item {
+    width: (380/800) * 100%;
+    margin-bottom: 60px;
+  }
+}
+
+/*trending
+-------------------------------------*/
+
+.trending {
+  @include py();
+  background-color: $color-bg-gray;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__title {
+    @include title-main();
+  }
+
+  &__list {
+    @include flex();
+    margin-bottom: -60px;
+  }
+
+  &__item {
+    width: (380/800) * 100%;
+    margin-bottom: 60px;
+  }
+}
+
+/*post
+--------------------------------*/
+
+.post {
+  &__category {
+    margin-bottom: 10px;
+    color: $color-accent;
+    font-size: 12px;
+    font-style: oblique;
+    line-height: (20/12);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include title-sub();
+  }
+}
+
+/*card
+---------------------------------*/
+
+.card {
+  background-color: #fff;
+
+  &__body {
+    padding: 35px;
+  }
+
+  &__title {
+    @include title-sub();
+  }
+}
+
+/*time
+-------------------------------------*/
+
+.time {
+  padding-left: 26px;
+  margin-top: 20px;
+  color: $color-sub;
+  font-size: 12px;
+  line-height: (20/12);
+  background: url(../images/icon_time.png) no-repeat left center;
+}
+
+/*btn
+--------------------------------------*/
+
+.btn {
+  display: block;
+  width: 160px;
+  margin-top: 25px;
+  margin-left: auto;
+  padding: 15px 0;
+  font-size: 12px;
+  color: #fff;
+  line-height: (20/12);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: $color-accent;
+}
+
+/*footer
+---------------------------------------*/
+
+.footer {
+  padding: 100px 0 40px;
+  background-color: $color-title;
+
+  &__inner {
+    @include inner();
+  }
+
+  &__small {
+    font-size: 12px;
+    line-height: (20/12);
+    color: $color-sub;
+  }
+}
